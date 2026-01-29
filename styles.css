@@ -21,21 +21,68 @@ body {
 header {
     background-color: #ffffff;
     padding: 30px 0;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 2px solid #6B5B95;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-container {
-    text-align: center;
+    flex-shrink: 0;
 }
 
 .logo {
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
+    display: block;
+}
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.contact-person-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-person-header .name {
+    font-weight: 600;
+    color: #2C2C2C;
+    font-size: 1rem;
+}
+
+.icon-link {
+    color: #6B5B95;
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.2s;
+}
+
+.icon-link:hover {
+    opacity: 0.7;
+}
+
+.icon-link svg {
+    display: block;
+}
+
+/* Section Divider */
+.section-divider {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 0;
 }
 
 /* Hero Section */
 .hero {
-    background-color: #F5F5F5;
     padding: 80px 0;
     text-align: center;
 }
@@ -52,7 +99,6 @@ header {
 /* About Section */
 .about {
     padding: 80px 0;
-    background-color: #ffffff;
 }
 
 .about h2 {
@@ -71,7 +117,6 @@ header {
 /* Services Section */
 .services {
     padding: 80px 0;
-    background-color: #F5F5F5;
 }
 
 .services h2 {
@@ -80,44 +125,16 @@ header {
     color: #2C2C2C;
 }
 
-.services .intro {
+.services p {
     font-size: 1.125rem;
     line-height: 1.8;
     color: #666666;
-    margin-bottom: 40px;
-    max-width: 900px;
-}
-
-.service-item {
-    margin-bottom: 30px;
-    max-width: 900px;
-}
-
-.service-item h3 {
-    font-size: 1.5rem;
-    color: #6B5B95;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.service-item p {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: #666666;
-}
-
-.services .outro {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: #666666;
-    margin-top: 40px;
     max-width: 900px;
 }
 
 /* Contact Section */
 .contact {
     padding: 80px 0;
-    background-color: #ffffff;
 }
 
 .contact h2 {
@@ -174,6 +191,20 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contact-header {
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 180px;
+    }
+
     .hero h1 {
         font-size: 1.75rem;
     }
@@ -185,14 +216,11 @@ footer p {
     }
 
     .about p,
-    .services .intro,
-    .service-item p,
-    .services .outro,
+    .services p,
     .contact-person p {
         font-size: 1rem;
     }
 
-    .service-item h3,
     .contact-person h3 {
         font-size: 1.25rem;
     }
@@ -206,9 +234,5 @@ footer p {
 
     .contact-info {
         gap: 50px;
-    }
-
-    .logo {
-        max-width: 250px;
     }
 }
